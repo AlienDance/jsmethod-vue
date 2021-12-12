@@ -24,7 +24,13 @@ export default {
         col.value.setAttribute('class', 'col-12')
       }
 
-      fetch('https://jsmethod.com/lorem')
+      fetch('https://jsmethod.com/lorem', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ card: true })
+      })
         .then(res => res.json())
         .then(data => {
           if (props.isLargeCard) {
