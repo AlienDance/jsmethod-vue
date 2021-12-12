@@ -3,14 +3,14 @@
     <div class="d-flex justify-content-center">
       <textarea ref="loremTextarea" class="rounded px-1" cols="120" rows="15"></textarea>
     </div>
-    <div class="row justify-content-center mt-3">
-      <div class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-end pe-1 mb-3 mb-lg-0">
+    <div class="d-block d-lg-flex justify-content-center mt-3">
+      <div class="d-flex justify-content-center">
         <div class="input-group" style="width: 200px">
           <span class="input-group-text justify-content-center" style="width: 110px">Sentences</span>
           <input ref="loremInput" type="number" min="1" max="1000" value="1" class="form-control text-center" />
         </div>
       </div>
-      <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-start ps-1">
+      <div class="d-flex justify-content-center m-3 m-lg-0">
         <button @click="fetchLorem" class="btn btn-success ms-2 me-1 d-inline-flex align-items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
