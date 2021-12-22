@@ -32,15 +32,14 @@
 
 <script>
 import { onMounted } from '@vue/runtime-core'
-import generateImages from '@/composables/generateImages'
+import generateRandomImages from '@/composables/generateRandomImages'
 
 export default {
   setup() {
     onMounted(() => {
       let carouselImages = document.querySelectorAll('.carousel-item > img')
 
-      const { generateRandomNumber, generateRandomImages } = generateImages()
-      carouselImages.forEach((image) => {
+      carouselImages.forEach(image => {
         generateRandomImages(image, null, '1920x1080', '?sig=')
       })
     })

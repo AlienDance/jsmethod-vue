@@ -14,9 +14,10 @@ export default {
   components: { InfoCard },
   setup() {
     onMounted(() => {
-      const { bootstrapPopoverOn, bootstrapTooltipOn } = Bootstrap
+      const { bootstrapPopoverOn, bootstrapTooltipOn, bootstrapDropdownOn } = Bootstrap
       bootstrapTooltipOn()
       bootstrapPopoverOn()
+      bootstrapDropdownOn()
       noRefreshOnEmptyLink()
     })
   }

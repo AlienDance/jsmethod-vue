@@ -1,7 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Lorem from '../views/Lorem.vue'
-import Portfolio from '../views/Portfolio.vue'
+import Home from '@/views/Home.vue'
+import Lorem from '@/views/Lorem.vue'
+import Portfolio from '@/views/Portfolio.vue'
+import Login from '@/views/Login.vue'
+import Signup from '@/views/Signup.vue'
+import TodoList from '@/views/TodoList.vue'
+
+const titleEnd = ' - jsmethod'
 
 const routes = [
   {
@@ -9,7 +14,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Home - jsmethod'
+      title: 'Home' + titleEnd
     }
   },
   {
@@ -17,7 +22,7 @@ const routes = [
     name: 'Lorem',
     component: Lorem,
     meta: {
-      title: 'Lorem - jsmethod'
+      title: 'Lorem' + titleEnd
     }
   },
   {
@@ -25,7 +30,31 @@ const routes = [
     name: 'Portfolio',
     component: Portfolio,
     meta: {
-      title: 'Portfolio - jsmethod'
+      title: 'Portfolio' + titleEnd
+    }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      title: 'Log In' + titleEnd
+    }
+  },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup,
+    meta: {
+      title: 'Sign Up' + titleEnd
+    }
+  },
+  {
+    path: '/todo-list',
+    name: 'TodoList',
+    component: TodoList,
+    meta: {
+      title: 'To-Do List' + titleEnd
     }
   }
 ]
@@ -37,6 +66,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title
+  axios.get('/')
   next()
 })
 

@@ -42,13 +42,19 @@
         </button>
       </div>
     </div>
-    <p class="text-muted text-center mt-2">Generates from 1 to 1000 sentences.</p>
+    <div class="text-muted text-center mt-2">
+      <p class="mb-1">Generates from 1 to 1000 sentences</p>
+      <p>
+        Made with
+        <a target="_blank" class="text-decoration-none" href="https://www.npmjs.com/package/lorem-ipsum">lorem-ipsum</a>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from '@vue/reactivity'
-import { onMounted } from '@vue/runtime-core'
+import { onBeforeMount, onMounted } from '@vue/runtime-core'
 
 export default {
   setup() {
@@ -56,25 +62,21 @@ export default {
     const loremInput = ref(null)
 
     const fetchLorem = () => {
-      const sentences = { sentQuan: Number(loremInput.value.value) }
+      let sentencesQuantity = loremInput.value.value
 
-      if (sentences.sentQuan <= 0) {
-        sentences.sentQuan = 1
+      if (sentencesQuantity <= 0) {
+        sentencesQuantity = 1
         loremInput.value.value = 1
-      } else if (sentences.sentQuan > 1000) {
-        sentences.sentQuan = 1000
+      } else if (sentencesQuantity > 1000) {
+        sentencesQuantity = 1000
         loremInput.value.value = 1000
       }
 
-      fetch('https://jsmethod.com/lorem', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(sentences)
-      })
-        .then(res => res.json())
-        .then(data => (loremTextarea.value.value = data.lorem))
+      axios
+        .post('/lorem', {
+          sentencesQuantity
+        })
+        .then(res => (loremTextarea.value.value = res.data.lorem))
         .catch(err => console.log(err))
     }
 

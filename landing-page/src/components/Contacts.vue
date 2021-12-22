@@ -7,7 +7,7 @@
     style="border: 0"
     loading="lazy"
     allowfullscreen
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNmIe9cDRLLGqNeOd855wTix5vYYQ7HTo&q=Eiffel Tower, Paris">
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNmIe9cDRLLGqNeOd855wTix5vYYQ7HTo&q=Eiffel Tower, Champ de Mars, Av. Anatole France, 75007 Paris, France">
   </iframe>
   <div class="my-2 mb-4 text-light">
     <div class="d-flex align-items-center justify-content-center lead text-center fs-4 contact-lines my-2">
