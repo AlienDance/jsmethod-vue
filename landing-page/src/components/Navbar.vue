@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark border-bottom border-light p-0 px-2">
-    <div class="container-fluid">
+    <div class="container-fluid" id="navbar-spy">
       <!-- navbar brand / title -->
       <a class="navbar-brand text-light p-0" href="/landing">
         <h1 class="display-5 my-2 mt-lg-0 mb-lg-1">SOMETHING</h1>
@@ -12,17 +12,8 @@
       <!-- navbar links -->
       <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
         <ul class="navbar-nav">
-          <li class="nav-item mx-lg-2">
-            <a class="nav-link lead d-flex text-light" href="#home">Home</a>
-          </li>
-          <li class="nav-item mx-lg-2">
-            <a class="nav-link lead text-light" href="#about">Abouts Us</a>
-          </li>
-          <li class="nav-item mx-lg-2">
-            <a class="nav-link lead text-light" href="#gallery">Gallery</a>
-          </li>
-          <li class="nav-item mx-lg-2">
-            <a class="nav-link lead text-light" href="#contacts">Contacts</a>
+          <li v-for="item in navArray" :key="item.title" class="nav-item mx-lg-2 d-flex justify-content-end">
+            <a class="nav-link lead text-light" :href="item.href">{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -31,7 +22,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  setup() {
+    const navArray = [
+      { title: 'Home', href: '#home' },
+      { title: 'About Us', href: '#about' },
+      { title: 'Gallery', href: '#gallery' },
+      { title: 'Contacts', href: '#contacts' }
+    ]
+
+    return { navArray }
+  }
+}
 </script>
 
 <style></style>

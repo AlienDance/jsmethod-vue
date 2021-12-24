@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <div class="container carousel-container" id="home">
+  <div id="home">
     <Carousel />
   </div>
   <div class="container my-0" id="about">
@@ -20,7 +20,7 @@
       <Gallery />
     </div>
   </div>
-  <div class="container mb-3" id="contacts">
+  <div class="border-top border-light" id="contacts">
     <Contacts />
   </div>
 </template>

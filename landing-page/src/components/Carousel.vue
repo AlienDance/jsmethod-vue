@@ -1,28 +1,36 @@
 <template>
-  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div
+    id="carousel"
+    class="carousel slide border-bottom border-light"
+    data-bs-ride="carousel"
+    data-bs-touch="true"
+    data-bs-pause="false">
     <div class="carousel-inner rounded">
       <div class="carousel-item active" data-bs-interval="3000">
-        <img src="" class="d-block w-100" alt="..." />
+        <img src="landing-page/images/carousel/image3.jfif" class="d-block w-100" />
       </div>
       <div class="carousel-item" data-bs-interval="3000">
-        <img src="" class="d-block w-100" alt="..." />
+        <img src="landing-page/images/carousel/image4.jfif" class="d-block w-100" />
       </div>
       <div class="carousel-item" data-bs-interval="3000">
-        <img src="" class="d-block w-100" alt="..." />
+        <img src="landing-page/images/carousel/image2.jfif" class="d-block w-100" />
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="landing-page/images/carousel/image5.jfif" class="d-block w-100" />
       </div>
     </div>
     <button
-      class="carousel-control-prev d-flex justify-content-start ps-4"
+      class="carousel-control-prev d-none d-lg-flex justify-content-start ps-4"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carousel"
       data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
     <button
-      class="carousel-control-next d-flex justify-content-end pe-4"
+      class="carousel-control-next d-none d-lg-flex justify-content-end pe-4"
       type="button"
-      data-bs-target="#carouselExampleInterval"
+      data-bs-target="#carousel"
       data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
@@ -31,20 +39,7 @@
 </template>
 
 <script>
-import { onMounted } from '@vue/runtime-core'
-import generateRandomImages from '@/composables/generateRandomImages'
-
-export default {
-  setup() {
-    onMounted(() => {
-      let carouselImages = document.querySelectorAll('.carousel-item > img')
-
-      carouselImages.forEach(image => {
-        generateRandomImages(image, null, '1920x1080', '?sig=')
-      })
-    })
-  }
-}
+export default {}
 </script>
 
 <style></style>
