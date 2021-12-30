@@ -5,6 +5,7 @@
 
       <div class="text-center fs-4">
         <p><a class="text-decoration-none portfolio-link" href="/landing">Landing Page</a></p>
+        <p><a class="text-decoration-none portfolio-link" href="/commerce">Commerce App</a></p>
         <!-- <p><router-link class="text-decoration-none portfolio-link" to="/todo-list">To-Do List</router-link></p> -->
       </div>
     </div>

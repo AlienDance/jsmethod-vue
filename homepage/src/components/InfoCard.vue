@@ -5,7 +5,7 @@
         <img style="width: 150px" src="homepage/images/Kot.png" alt="" class="rounded-pill d-block mx-auto" />
         <div class="mt-3 text-center lead">
           <p class="mb-1">Hi, my name is vlader. I'm coding some stuff here and there...</p>
-          <p class="mb-1">I like web development, both back-end and front-end. I am completely self-taught.</p>
+          <p class="mb-1">I like web development, both back-end and front-end.</p>
           <p class="mb-4">Technologies i learn and i'm building with:</p>
         </div>
         <div class="container">
