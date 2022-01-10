@@ -30,25 +30,21 @@ import Navbar from '@/components/Navbar.vue'
 import Carousel from '@/components/Carousel.vue'
 import Card from '@/components/Card.vue'
 import Gallery from '@/components/Gallery.vue'
-import Pagination from '@/components/Pagination.vue'
 import Contacts from '@/components/Contacts.vue'
-import { onMounted } from '@vue/runtime-core'
 
 export default {
   name: 'App',
-  components: { Navbar, Carousel, Card, Gallery, Pagination, Contacts },
-  setup() {
-    onMounted(() => {
-      const links = document.querySelectorAll('a')
-      links.forEach(a => {
-        let href = a.getAttribute('href')
-        if (href === '') {
-          a.addEventListener('click', e => e.preventDefault())
-        }
-      })
-    })
-  }
+  components: { Navbar, Carousel, Card, Gallery, Contacts }
 }
 </script>
 
-<style></style>
+<style>
+body {
+  position: relative;
+}
+
+.container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+</style>

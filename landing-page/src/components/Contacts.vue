@@ -56,7 +56,7 @@
           </svg>
         </div>
         <div class="d-flex justify-content-center contact-lines align-items-center lead text-center fs-4">
-          <a href="/" class="text-light">Exit Portfolio</a>
+          <a href="/portfolio" class="text-light">Back To Portfolio</a>
         </div>
       </div>
     </div>
@@ -67,4 +67,30 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+@media (min-width: 992px) {
+  #contacts {
+    margin-top: 90px;
+  }
+}
+
+.contact-lines > svg {
+  fill: rgb(248, 249, 250);
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  padding-bottom: 2px;
+}
+
+.contact-lines-socials > svg {
+  fill: rgb(248, 249, 250);
+  width: 30px;
+  height: 30px;
+  margin: 0 8px;
+}
+
+.contact-lines-socials > svg:hover {
+  cursor: pointer;
+  fill: rgb(0, 174, 255);
+}
+</style>

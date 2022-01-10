@@ -126,4 +126,16 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.nav-item:hover {
+  background-color: rgb(0, 99, 33);
+}
+
+.nav-item > .nav-link {
+  font-size: 16px;
+}
+
+.navbar-brand {
+  height: 56px;
+}
+</style>

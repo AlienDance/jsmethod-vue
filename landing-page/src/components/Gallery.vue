@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import { onMounted, ref } from '@vue/runtime-core'
-import imagesArrays from '../../public/landing-page/images/imagesArrays'
+import { onMounted } from '@vue/runtime-core'
+import imagesArrays from '@/../public/landing-page/images/imagesArrays'
 
 export default {
   setup() {
@@ -68,4 +68,25 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+@media (min-width: 992px) {
+  #gallery,
+  #about {
+    padding-top: 90px;
+  }
+}
+
+.gallery-image:hover {
+  border: 2px rgb(248, 249, 250) solid;
+  cursor: pointer;
+}
+
+.gallery-image {
+  border: 2px rgba(0, 0, 0, 0) solid;
+  object-fit: cover;
+}
+
+a.current-page {
+  color: rgb(0, 174, 255) !important;
+}
+</style>

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { computed, onMounted, ref } from '@vue/runtime-core'
+import { onMounted, ref } from '@vue/runtime-core'
 
 export default {
   props: ['isLargeCard'],
@@ -24,7 +24,7 @@ export default {
         col.value.setAttribute('class', 'col-12')
       }
 
-      fetch('https://jsmethod.com/lorem', {
+      fetch('/lorem', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -48,4 +48,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.card {
+  height: 100%;
+}
+</style>

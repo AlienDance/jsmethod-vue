@@ -109,4 +109,14 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.auth-dropdown > a {
+  padding: 13px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.auth-card {
+  width: 350px;
+}
+</style>

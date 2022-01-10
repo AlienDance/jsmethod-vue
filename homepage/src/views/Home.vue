@@ -1,25 +1,32 @@
 <template>
-  <InfoCard />
+  <div class="container lead text-center fs-4">
+    <p class="mt-5">Homepage still in development...</p>
+    <p>
+      <router-link class="homepage-link" to="/login">log in</router-link> /
+      <router-link class="homepage-link" to="/signup">sign up</router-link>
+    </p>
+    <ul class="list-unstyled">
+      <li><router-link class="homepage-link" to="/portfolio">Portfolio</router-link></li>
+      <li><router-link class="homepage-link" to="/lorem">Lorem</router-link></li>
+    </ul>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import InfoCard from '@/components/InfoCard.vue'
-import { onMounted } from '@vue/runtime-core'
-import Bootstrap from '@/composables/bootstrap'
-import noRefreshOnEmptyLink from '@/composables/noRefreshOnEmptyLink'
 
 export default {
-  name: 'Home',
-  components: { InfoCard },
-  setup() {
-    onMounted(() => {
-      const { bootstrapPopoverOn, bootstrapTooltipOn, bootstrapDropdownOn } = Bootstrap
-      bootstrapTooltipOn()
-      bootstrapPopoverOn()
-      bootstrapDropdownOn()
-      noRefreshOnEmptyLink()
-    })
-  }
+  name: 'Home'
 }
 </script>
+
+<style>
+.homepage-link {
+  text-decoration: none;
+}
+
+.homepage-link:hover {
+  color: rgb(0, 57, 122);
+  text-decoration: underline;
+}
+</style>

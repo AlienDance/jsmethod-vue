@@ -36,4 +36,19 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.nav-link {
+  width: fit-content;
+}
+
+.nav-link:hover,
+.nav-item > .active {
+  text-decoration: underline 1px;
+  text-underline-offset: 3px;
+}
+
+.navbar,
+#contacts {
+  background-color: rgb(22, 22, 22);
+}
+</style>

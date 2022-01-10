@@ -1,9 +1,8 @@
 .DS_Store
 node_modules
 /dist
-.prettierrc
-vue.config.js
-vetur.config.js
+output.js
+
 
 # local env files
 .env.local

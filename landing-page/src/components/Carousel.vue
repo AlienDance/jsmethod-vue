@@ -42,4 +42,12 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+#carousel {
+  padding-top: 50px;
+}
+
+.carousel-item {
+  transition: all 0.5s ease-in-out;
+}
+</style>
