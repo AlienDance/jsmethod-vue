@@ -69,13 +69,6 @@ export default {
 </script>
 
 <style>
-@media (min-width: 992px) {
-  #gallery,
-  #about {
-    padding-top: 90px;
-  }
-}
-
 .gallery-image:hover {
   border: 2px rgb(248, 249, 250) solid;
   cursor: pointer;

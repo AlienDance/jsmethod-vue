@@ -1,9 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success p-0 px-2 d-flex align-items-center">
-    <div class="container-fluid mx-0 mx-lg-5">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success p-0 px-2">
+    <div class="container-fluid px-lg-5">
       <!-- navbar brand / title -->
-      <router-link class="navbar-brand text-light mx-0 mx-lg-3 d-flex align-items-center" to="/">
-        <h1 class="pt-1">JSMETHOD</h1>
+      <router-link class="navbar-brand text-light m-0 py-2 mx-lg-3 d-flex align-items-center" to="/">
+        <span class="h2 mb-0">JSMETHOD</span>
       </router-link>
       <!-- toggle button for mobile nav -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
@@ -135,7 +135,20 @@ export default {
   font-size: 16px;
 }
 
-.navbar-brand {
-  height: 56px;
+/* @media (min-width: 992px) {
+  .navbar-brand {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+} */
+
+.navbar-brand > span {
+  margin-bottom: 2px !important;
+}
+
+.auth-dropdown > a {
+  padding: 13px;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 </style>

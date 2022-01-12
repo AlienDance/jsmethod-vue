@@ -1,22 +1,31 @@
 <template>
-  <div v-if="!userIsAuth" class="card auth-card p-3">
-    <form @submit.prevent @submit="sumbitAuthForm" ref="form">
-      <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input ref="emailInput" type="email" class="form-control" name="email" id="email" />
-      </div>
-      <div>
-        <p class="text-danger" ref="emailError"></p>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input ref="passwordInput" type="password" class="form-control" name="password" id="password" />
-      </div>
-      <div><p class="text-danger" ref="passwordError"></p></div>
-      <div class="d-flex justify-content-center">
-        <button class="btn btn-success">{{ buttonText }}</button>
-      </div>
-    </form>
+  <div v-if="!userIsAuth" class="card-container">
+    <div class="card auth-card p-3">
+      <form @submit.prevent @submit="sumbitAuthForm">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input ref="emailInput" type="email" class="form-control" name="email" id="email" />
+        </div>
+        <div>
+          <p class="text-danger" ref="emailError"></p>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input ref="passwordInput" type="password" class="form-control" name="password" id="password" />
+        </div>
+        <div><p class="text-danger" ref="passwordError"></p></div>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-success">{{ buttonText }}</button>
+        </div>
+      </form>
+    </div>
+    <p v-if="props.login" class="small mt-2 text-muted text-center">
+      Use <span class="text-primary">test123@test.com</span> and <span class="text-primary">test123</span> for testing
+      purposes.
+    </p>
+    <p v-else class="small mt-2 text-muted text-center">
+      Or log in with testing account <router-link to="/login">here</router-link>.
+    </p>
   </div>
   <div v-else-if="userIsAuth" class="text-center">
     <p>You are already logged in...</p>
@@ -27,13 +36,11 @@
 
 <script>
 import { ref } from '@vue/reactivity'
-import { onMounted } from '@vue/runtime-core'
 
 export default {
   props: ['login', 'signup'],
 
   setup(props) {
-    const form = ref(null)
     const emailInput = ref(null)
     const passwordInput = ref(null)
     const emailError = ref(null)
@@ -95,7 +102,6 @@ export default {
     }
 
     return {
-      form,
       emailInput,
       passwordInput,
       emailError,
@@ -103,20 +109,15 @@ export default {
       buttonText,
       userIsAuth,
       logout,
-      sumbitAuthForm
+      sumbitAuthForm,
+      props
     }
   }
 }
 </script>
 
 <style>
-.auth-dropdown > a {
-  padding: 13px;
-  padding-right: 16px;
-  padding-left: 16px;
-}
-
-.auth-card {
-  width: 350px;
+.card-container {
+  width: 22rem;
 }
 </style>

@@ -8,8 +8,10 @@
           <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
             <p class="fw-bolder">
               <span>{{ project.title }} (</span
-              ><a target="_blank" class="text-decoration-none portfolio-link" :href="project.href">Open</a> |
-              <span><a target="_blank" class="text-decoration-none portfolio-link" href="#">Code</a>)</span>
+              ><a target="_blank" class="text-decoration-none portfolio-link" :href="project.link">Open</a> |
+              <span
+                ><a target="_blank" class="text-decoration-none portfolio-link" :href="project.codeLink">Code</a>)</span
+              >
             </p>
             <ul class="list-unstyled fs-5">
               <li v-for="feature in project.features" :key="feature" class="mb-1">{{ feature }}</li>
@@ -42,7 +44,8 @@ export default {
     const projects = [
       {
         title: 'Landing page website',
-        href: '/landing',
+        link: '/landing',
+        codeLink: 'https://github.com/AlienDance/jsmethod-vue/tree/master/landing-page',
         image: 'homepage/images/Screenshot2.png',
         description: 'A landing page website.',
         features: ['Scrollspy Navbar', 'Image Carousel', 'Lightbox Gallery', 'Mobile Friendly'],
@@ -50,7 +53,8 @@ export default {
       },
       {
         title: 'E-commerce web-app for a local store',
-        href: '/eshop',
+        link: '/eshop',
+        codeLink: 'https://github.com/AlienDance/jsmethod-vue/tree/master/eshop-app',
         image: 'homepage/images/Screenshot.png',
         description: 'E-commerce web-app for a local store.',
         features: [

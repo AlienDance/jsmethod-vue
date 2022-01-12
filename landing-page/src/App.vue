@@ -47,4 +47,30 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+@media (max-width: 992px) {
+  #gallery,
+  #about {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  #contacts {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  #gallery,
+  #about {
+    padding-top: 90px;
+  }
+}
+
+@media (min-width: 992px) {
+  #contacts {
+    margin-top: 90px;
+  }
+}
 </style>

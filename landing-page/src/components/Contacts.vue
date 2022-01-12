@@ -68,12 +68,6 @@ export default {}
 </script>
 
 <style>
-@media (min-width: 992px) {
-  #contacts {
-    margin-top: 90px;
-  }
-}
-
 .contact-lines > svg {
   fill: rgb(248, 249, 250);
   width: 24px;
@@ -92,5 +86,11 @@ export default {}
 .contact-lines-socials > svg:hover {
   cursor: pointer;
   fill: rgb(0, 174, 255);
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 420px;
+  }
 }
 </style>
