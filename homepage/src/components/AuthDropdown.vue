@@ -85,7 +85,14 @@ export default {
       showLogin = false
     }
 
-    return { showLogin }
+    const logout = () => {
+      axios
+        .post('/logout')
+        .then(res => (window.location.href = '/'))
+        .catch(err => console.log(err))
+    }
+
+    return { showLogin, logout }
   }
 }
 </script>

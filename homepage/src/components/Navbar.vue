@@ -42,14 +42,7 @@ export default {
       { title: 'Lorem', href: '/lorem' }
     ]
 
-    const logout = () => {
-      axios
-        .post('/logout')
-        .then(res => (window.location.href = '/'))
-        .catch(err => console.log(err))
-    }
-
-    return { navItems, logout }
+    return { navItems }
   }
 }
 </script>
