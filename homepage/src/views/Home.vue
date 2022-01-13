@@ -7,6 +7,7 @@
     </p>
     <ul class="list-unstyled">
       <li><router-link class="homepage-link" to="/portfolio">Portfolio</router-link></li>
+      <li><router-link class="homepage-link" to="/to-do">Todo List</router-link></li>
       <li><router-link class="homepage-link" to="/lorem">Lorem</router-link></li>
     </ul>
   </div>

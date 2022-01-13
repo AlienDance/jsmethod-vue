@@ -50,11 +50,11 @@ const routes = [
     }
   },
   {
-    path: '/todo-list',
+    path: '/to-do',
     name: 'TodoList',
     component: TodoList,
     meta: {
-      title: 'To-Do List' + titleEnd
+      title: 'To Do' + titleEnd
     }
   }
 ]

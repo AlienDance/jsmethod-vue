@@ -7,11 +7,11 @@
         <div v-for="project in projects" :key="project.title" class="row border border-dark py-2 rounded mb-3">
           <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
             <p class="fw-bolder">
-              <span>{{ project.title }} (</span
-              ><a target="_blank" class="text-decoration-none portfolio-link" :href="project.link">Open</a> |
-              <span
-                ><a target="_blank" class="text-decoration-none portfolio-link" :href="project.codeLink">Code</a>)</span
-              >
+              <span>{{ project.title }}</span>
+              <span class="d-block d-lg-inline">
+                (<a target="_blank" class="text-decoration-none portfolio-link" :href="project.link">Open</a> |
+                <a target="_blank" class="text-decoration-none portfolio-link" :href="project.codeLink">Code</a>)
+              </span>
             </p>
             <ul class="list-unstyled fs-5">
               <li v-for="feature in project.features" :key="feature" class="mb-1">{{ feature }}</li>
@@ -48,21 +48,21 @@ export default {
         codeLink: 'https://github.com/AlienDance/jsmethod-vue/tree/master/landing-page',
         image: 'homepage/images/Screenshot2.png',
         description: 'A landing page website.',
-        features: ['Scrollspy Navbar', 'Image Carousel', 'Lightbox Gallery', 'Mobile Friendly'],
+        features: ['Scrollspy Navbar', 'Image Carousel', 'Lightbox Gallery', 'Responsive Design'],
         tools: ['node-logo-black.svg', 'vuejs-logo.svg', 'bootstrap-logo.svg']
       },
       {
-        title: 'E-commerce web-app for a local store',
+        title: 'E-commerce web-app for a store',
         link: '/eshop',
         codeLink: 'https://github.com/AlienDance/jsmethod-vue/tree/master/eshop-app',
         image: 'homepage/images/Screenshot.png',
         description: 'E-commerce web-app for a local store.',
         features: [
-          'Multiple categories of items',
+          'Multiple item categories',
           'Cart System',
           'Order Managment System',
           'Single Page Application',
-          'Mobile Friendly'
+          'Responsive Design'
         ],
         tools: ['node-logo-black.svg', 'vuejs-logo.svg', 'bootstrap-logo.svg', 'mongodb-logo.svg']
       }
