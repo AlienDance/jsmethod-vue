@@ -120,7 +120,14 @@ export default {
 
 .add-btn,
 .clear-btn {
-  width: 6rem;
+  width: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  .add-btn,
+  .clear-btn {
+    width: 6rem;
+  }
 }
 
 .todo-container {

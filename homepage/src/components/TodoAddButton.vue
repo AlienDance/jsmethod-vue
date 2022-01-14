@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-success add-btn me-2 me-md-0 mb-md-2 d-flex align-items-center justify-content-center">
+  <button class="btn btn-success add-btn me-1 me-md-0 mb-md-2 d-flex align-items-center justify-content-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
