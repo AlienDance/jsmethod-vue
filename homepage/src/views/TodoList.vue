@@ -7,18 +7,21 @@
           type="text"
           class="form-control"
           id="new-todo-input"
-          @keypress.enter="setItemToLocalStorage"
+          @keypress.enter="setTodoToLocalStorage"
           placeholder="New To Do" />
         <div class="col-12 mt-2 d-flex d-md-none align-items-center justify-content-center">
-          <TodoAddButton @click="setItemToLocalStorage" />
-          <TodoClearButton @click="clearAllItems" />
+          <TodoAddButton @click="setTodoToLocalStorage" />
+          <TodoClearButton @click="clearAllTodos" />
+          <TodoResetSwitch />
         </div>
         <ul class="list-group w-100 my-2">
-          <div v-for="todo in todosFromStorage" :key="todo.id" :data-id="todo.id" class="input-group todo-div my-1">
+          <div v-for="todo in todosFromStorage" :key="todo" class="input-group todo-div my-1">
             <li @input="editTodo" contenteditable="true" class="list-group-item rounded-start form-control">
               {{ todo.item }}
             </li>
-            <button @click="deleteSingleTodo" class="btn btn-warning input-group-text d-flex align-items-center">
+            <button
+              @click="deleteSingleTodo"
+              class="btn btn-warning delete-btn input-group-text d-flex align-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -36,9 +39,10 @@
           </div>
         </ul>
       </div>
-      <div class="col-12 col-md-2 ps-md-0 d-none d-md-flex flex-md-column align-items-center">
-        <TodoAddButton @click="setItemToLocalStorage" />
-        <TodoClearButton @click="clearAllItems" />
+      <div class="col-12 col-md-2 ps-md-2 d-none d-md-flex flex-md-column align-items-center">
+        <TodoAddButton @click="setTodoToLocalStorage" />
+        <TodoClearButton @click="clearAllTodos" />
+        <TodoResetSwitch />
       </div>
     </div>
   </div>
@@ -47,61 +51,60 @@
 <script>
 import TodoAddButton from '@/components/TodoAddButton.vue'
 import TodoClearButton from '@/components/TodoClearButton.vue'
+import TodoResetSwitch from '@/components/TodoResetSwitch.vue'
 import { ref } from '@vue/reactivity'
 
 export default {
-  components: { TodoAddButton, TodoClearButton },
+  components: { TodoAddButton, TodoClearButton, TodoResetSwitch },
   setup() {
     const newTodoInput = ref(null)
     const todosFromStorage = ref([])
-    const todoId = ref(null)
 
     todosFromStorage.value = JSON.parse(localStorage.getItem('todos'))
-    todoId.value = JSON.parse(localStorage.getItem('todoId'))
 
-    const setItemToLocalStorage = () => {
+    const setTodoToLocalStorage = () => {
       if (newTodoInput.value.value) {
-        if (todoId.value === null || todosFromStorage.value === null) {
-          todoId.value = 0
-          localStorage.setItem('todoId', '0')
+        if (todosFromStorage.value === null) {
           todosFromStorage.value = []
         } else {
           todosFromStorage.value = JSON.parse(localStorage.getItem('todos'))
         }
-        todoId.value++
-        localStorage.setItem('todoId', JSON.stringify(todoId.value))
-        todosFromStorage.value.unshift({ id: todoId, item: newTodoInput.value.value })
+        todosFromStorage.value.unshift({ item: newTodoInput.value.value })
         localStorage.setItem('todos', JSON.stringify(todosFromStorage.value))
+        if (JSON.parse(localStorage.getItem('todoResetInput'))) {
+          newTodoInput.value.value = ''
+        }
       }
     }
 
     const deleteSingleTodo = event => {
-      const todoDiv = event.path.find(item => item.className.toString().includes('todo-div'))
-      const todoId = Number(todoDiv.dataset.id)
-      const filteredArray = todosFromStorage.value.filter(todo => todo.id !== todoId)
+      const clickedButton = event.path.find(item => item.className.toString().includes('delete-btn'))
+      const deleteButtonsArray = Array.from(document.querySelectorAll('.delete-btn'))
+      const todoIndex = deleteButtonsArray.indexOf(clickedButton)
+      const filteredArray = todosFromStorage.value.filter((todo, index) => index !== todoIndex)
       todosFromStorage.value = filteredArray
       localStorage.setItem('todos', JSON.stringify(todosFromStorage.value))
     }
 
-    const clearAllItems = () => {
-      console.log('items cleared')
+    const clearAllTodos = () => {
+      console.log('all todos cleared')
       todosFromStorage.value = []
       localStorage.setItem('todos', '[]')
-      todoId.value = 0
-      localStorage.setItem('todoId', '0')
     }
 
     const editTodo = event => {
-      const todoId = Number(event.target.parentNode.dataset.id)
-      const todo = todosFromStorage.value.find(todo => todo.id === todoId)
-      todo.item = event.target.textContent
+      const editedTodo = event.target
+      const todosList = Array.from(document.querySelectorAll('.list-group-item'))
+      const todoIndex = todosList.indexOf(editedTodo)
+      const todoFromStorage = todosFromStorage.value[todoIndex]
+      todoFromStorage.item = editedTodo.textContent
       localStorage.setItem('todos', JSON.stringify(todosFromStorage.value))
     }
 
     return {
       newTodoInput,
-      setItemToLocalStorage,
-      clearAllItems,
+      setTodoToLocalStorage,
+      clearAllTodos,
       todosFromStorage,
       deleteSingleTodo,
       editTodo
@@ -117,7 +120,7 @@ export default {
 
 .add-btn,
 .clear-btn {
-  width: 5.5rem;
+  width: 6rem;
 }
 
 .todo-container {
