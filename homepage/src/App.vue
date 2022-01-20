@@ -13,4 +13,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+@media (max-width: 768px) {
+  #app {
+    min-height: calc(100vh + 185px) !important;
+  }
+}
+</style>

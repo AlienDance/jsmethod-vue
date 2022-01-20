@@ -26,4 +26,10 @@ export default {
   padding: 13px 0px !important;
   margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    height: 185px;
+  }
+}
 </style>
