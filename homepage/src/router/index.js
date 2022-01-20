@@ -64,10 +64,10 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
+  window.scrollTo(0, 0)
   document.title = to.meta.title
   axios.get('/')
-  next()
 })
 
 export default router

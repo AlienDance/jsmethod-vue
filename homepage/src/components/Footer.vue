@@ -24,5 +24,6 @@ export default {
 <style>
 .footer {
   padding: 13px 0px !important;
+  margin-bottom: 0;
 }
 </style>
