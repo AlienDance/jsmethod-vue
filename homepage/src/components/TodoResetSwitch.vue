@@ -44,7 +44,7 @@ export default {
 
     onMounted(() => {
       bootstrapFunctions.bootstrapTooltipOn()
-      inputChecked.value = JSON.parse(localStorage.getItem('todoResetInput'))
+      inputChecked.value = JSON.parse(localStorage.getItem('todoResetInput')) ?? true
     })
 
     const saveStateToStorage = () => {
@@ -59,10 +59,10 @@ export default {
 <style>
 @media (max-width: 768px) {
   .form-check {
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-    padding-left: 3px !important;
-    padding-right: 3px !important;
+    padding: 6px 3px !important;
+  }
+  #resetInput {
+    margin-top: 2px !important;
   }
 }
 

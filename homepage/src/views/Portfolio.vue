@@ -1,10 +1,10 @@
 <template>
-  <div class="container px-4">
+  <div class="container px-4 py-5">
     <InfoCard />
-    <div class="text-center lead my-4">
+    <div class="text-center lead mt-4">
       <p class="fs-2">My Projects</p>
       <div class="text-center fs-4">
-        <div v-for="project in projects" :key="project.title" class="row border border-dark py-2 rounded mb-3">
+        <div v-for="project in projects" :key="project.title" class="row border border-dark py-2 rounded mt-3">
           <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
             <p class="fw-bolder">
               <span>{{ project.title }}</span>

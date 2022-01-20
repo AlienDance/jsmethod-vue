@@ -1,5 +1,5 @@
 <template>
-  <div class="card mt-5 row">
+  <div class="card row">
     <div class="card-body">
       <img style="width: 150px" src="homepage/images/Kot.png" alt="" class="rounded-pill d-block mx-auto" />
       <div class="mt-3 text-center lead">

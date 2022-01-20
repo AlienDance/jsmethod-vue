@@ -15,8 +15,8 @@
       <!-- navbar links -->
       <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
         <ul class="navbar-nav">
-          <li v-for="item in navItems" :key="item.title" class="nav-item">
-            <router-link class="nav-link text-end text-lg-center lead text-light fw-bold p-3" :to="item.href">{{
+          <li v-for="item in navbarLinks" :key="item.title" class="nav-item">
+            <router-link class="nav-link text-end text-lg-center text-light fw-bold p-3" :to="item.href">{{
               item.title
             }}</router-link>
           </li>
@@ -31,18 +31,12 @@
 
 <script>
 import AuthDropdown from '@/components/AuthDropdown.vue'
+import navbarLinks from '@/composables/navbarLinks'
 
 export default {
   components: { AuthDropdown },
   setup() {
-    const navItems = [
-      { title: 'Home', href: '/' },
-      { title: 'Portfolio', href: '/portfolio' },
-      { title: 'To Do', href: '/to-do' },
-      { title: 'Lorem', href: '/lorem' }
-    ]
-
-    return { navItems }
+    return { navbarLinks }
   }
 }
 </script>
@@ -58,5 +52,11 @@ export default {
 
 .navbar-brand > span {
   margin-bottom: 2px !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand > span {
+    margin-bottom: 0px !important;
+  }
 }
 </style>

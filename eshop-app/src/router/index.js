@@ -64,6 +64,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
+  window.scrollTo(0, 0)
   if (!localStorage.getItem('cart')) {
     localStorage.setItem('cart', JSON.stringify([]))
   }
