@@ -5,7 +5,7 @@
         <input
           ref="newTodoInput"
           type="text"
-          class="form-control"
+          class="form-control text-light"
           id="new-todo-input"
           @keypress.enter="setTodoToLocalStorage"
           placeholder="New To Do" />
@@ -16,7 +16,10 @@
         </div>
         <ul class="list-group w-100 my-2">
           <div v-for="todo in todosFromStorage" :key="todo" class="input-group todo-div my-1">
-            <li @input="editTodo" contenteditable="true" class="list-group-item rounded-start form-control">
+            <li
+              @input="editTodo"
+              contenteditable="true"
+              class="list-group-item border text-light rounded-start form-control">
               {{ todo.item }}
             </li>
             <button
@@ -116,6 +119,12 @@ export default {
 <style>
 #new-todo-input {
   height: 3rem;
+  background-color: #2e2e2e;
+}
+
+#new-todo-input::placeholder {
+  color: darkgrey;
+  opacity: 1;
 }
 
 .add-btn,
@@ -132,5 +141,10 @@ export default {
 
 .todo-container {
   width: 48rem;
+}
+
+.todo-div > li,
+.todo-div > li:focus {
+  background-color: #2e2e2e;
 }
 </style>

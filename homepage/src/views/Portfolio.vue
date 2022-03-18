@@ -4,7 +4,10 @@
     <div class="text-center lead mt-4">
       <p class="fs-2">My Projects</p>
       <div class="text-center fs-4">
-        <div v-for="project in projects" :key="project.title" class="row border border-dark py-2 rounded mt-3">
+        <div
+          v-for="project in projects"
+          :key="project.title"
+          class="portfolio-project-card border border-light rounded row py-2 mt-3">
           <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
             <p class="fw-bolder">
               <span>{{ project.title }}</span>
@@ -43,16 +46,16 @@ export default {
   setup() {
     const projects = [
       {
-        title: 'Landing page website',
+        title: 'Landing page',
         link: '/landing',
         codeLink: 'https://github.com/AlienDance/jsmethod-vue/tree/master/landing-page',
         image: 'homepage/images/Screenshot2.png',
         description: 'A landing page website.',
         features: ['Scrollspy Navbar', 'Image Carousel', 'Lightbox Gallery', 'Responsive Design'],
-        tools: ['node-logo-black.svg', 'vuejs-logo.svg', 'bootstrap-logo.svg']
+        tools: ['node-logo-white.svg', 'vuejs-logo.svg', 'bootstrap-logo.svg']
       },
       {
-        title: 'E-commerce web-app for a store',
+        title: 'E-commerce store',
         link: '/eshop',
         codeLink: 'https://github.com/AlienDance/jsmethod-vue/tree/master/eshop-app',
         image: 'homepage/images/Screenshot.png',
@@ -64,7 +67,7 @@ export default {
           'Single Page Application',
           'Responsive Design'
         ],
-        tools: ['node-logo-black.svg', 'vuejs-logo.svg', 'bootstrap-logo.svg', 'mongodb-logo.svg']
+        tools: ['node-logo-white.svg', 'vuejs-logo.svg', 'bootstrap-logo.svg', 'mongodb-logo.svg']
       }
     ]
 
@@ -79,7 +82,17 @@ export default {
   /* image-rendering: pixelated !important; */
 }
 
+.portfolio-link {
+  color: rgb(44, 126, 250);
+}
+
 .portfolio-link:hover {
-  border-bottom: solid 1px #0d6efd;
+  border-bottom: solid 1px;
+}
+
+.portfolio-about-card,
+.portfolio-project-card {
+  background-color: #2e2e2e;
+  color: #f8f9fa;
 }
 </style>

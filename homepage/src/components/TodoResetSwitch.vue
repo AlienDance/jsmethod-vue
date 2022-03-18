@@ -1,6 +1,6 @@
 <template>
   <div
-    class="d-flex flex-md-column align-items-center form-check form-switch text-primary border border-primary rounded p-0 py-1 m-0 ms-1 ms-md-0 mt-md-2"
+    class="d-flex flex-md-column align-items-center form-check form-switch text-light border border-primary rounded p-0 py-1 m-0 ms-1 ms-md-0 mt-md-2"
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title="Clear input field after adding new To Do">

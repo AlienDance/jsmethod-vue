@@ -5,8 +5,7 @@ import Portfolio from '@/views/Portfolio.vue'
 import Login from '@/views/Login.vue'
 import Signup from '@/views/Signup.vue'
 import TodoList from '@/views/TodoList.vue'
-
-const titleEnd = ' - jsmethod'
+import Chat from '@/views/Chat.vue'
 
 const routes = [
   {
@@ -14,7 +13,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Home' + titleEnd
+      title: 'Home'
     }
   },
   {
@@ -22,7 +21,7 @@ const routes = [
     name: 'Lorem',
     component: Lorem,
     meta: {
-      title: 'Lorem' + titleEnd
+      title: 'Lorem'
     }
   },
   {
@@ -30,7 +29,7 @@ const routes = [
     name: 'Portfolio',
     component: Portfolio,
     meta: {
-      title: 'Portfolio' + titleEnd
+      title: 'Portfolio'
     }
   },
   {
@@ -38,7 +37,7 @@ const routes = [
     name: 'Login',
     component: Login,
     meta: {
-      title: 'Log In' + titleEnd
+      title: 'Log In'
     }
   },
   {
@@ -46,7 +45,7 @@ const routes = [
     name: 'Signup',
     component: Signup,
     meta: {
-      title: 'Sign Up' + titleEnd
+      title: 'Sign Up'
     }
   },
   {
@@ -54,7 +53,15 @@ const routes = [
     name: 'TodoList',
     component: TodoList,
     meta: {
-      title: 'To Do' + titleEnd
+      title: 'To Do'
+    }
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: Chat,
+    meta: {
+      title: 'Chat'
     }
   }
 ]
@@ -66,7 +73,7 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   window.scrollTo(0, 0)
-  document.title = to.meta.title
+  document.title = to.meta.title + ' - jsmethod'
   axios.get('/')
 })
 

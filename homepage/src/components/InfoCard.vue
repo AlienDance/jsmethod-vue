@@ -1,6 +1,6 @@
 <template>
-  <div class="card row">
-    <div class="card-body">
+  <div class="card row border border-light">
+    <div class="card-body portfolio-about-card rounded-top">
       <img style="width: 150px" src="homepage/images/Kot.png" alt="" class="rounded-pill d-block mx-auto" />
       <div class="mt-3 text-center lead">
         <p class="mb-1">Hi, my name is vlader. I'm a web developer.</p>

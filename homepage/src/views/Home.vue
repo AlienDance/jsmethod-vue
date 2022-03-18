@@ -1,5 +1,5 @@
 <template>
-  <div class="container lead text-center fs-4">
+  <div class="container lead text-center fs-4 text-light">
     <p class="mt-5">Homepage still in development...</p>
     <p>
       <router-link class="homepage-link" to="/login">log in</router-link> /
@@ -24,10 +24,10 @@ export default {
 <style>
 .homepage-link {
   text-decoration: none;
+  color: rgb(44, 126, 250);
 }
 
 .homepage-link:hover {
-  color: rgb(0, 57, 122);
   text-decoration: underline;
 }
 </style>

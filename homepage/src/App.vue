@@ -1,7 +1,6 @@
 <template>
   <Navbar />
   <router-view />
-  <Footer />
 </template>
 
 <script>
@@ -14,9 +13,9 @@ export default {
 </script>
 
 <style>
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #app {
     min-height: calc(100vh + 185px) !important;
   }
-}
+} */
 </style>

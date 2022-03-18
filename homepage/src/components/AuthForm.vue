@@ -1,17 +1,22 @@
 <template>
   <div v-if="!userIsAuth" class="card-container">
-    <div class="card auth-card p-3">
+    <div class="card auth-card p-3 border border-light text-light">
       <form @submit.prevent @submit="sumbitAuthForm">
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input ref="emailInput" type="email" class="form-control" name="email" id="email" />
+          <input ref="emailInput" type="email" class="form-control text-light" name="email" id="auth-email-input" />
         </div>
         <div>
           <p class="text-danger" ref="emailError"></p>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input ref="passwordInput" type="password" class="form-control" name="password" id="password" />
+          <input
+            ref="passwordInput"
+            type="password"
+            class="form-control text-light"
+            name="password"
+            id="auth-password-input" />
         </div>
         <div><p class="text-danger" ref="passwordError"></p></div>
         <div class="d-flex justify-content-center">
@@ -119,5 +124,14 @@ export default {
 <style>
 .card-container {
   width: 22rem;
+}
+
+.auth-card {
+  background-color: #2e2e2e;
+}
+
+#auth-email-input,
+#auth-password-input {
+  background-color: #6c757d;
 }
 </style>
